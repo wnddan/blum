@@ -161,7 +161,7 @@ class BlumBot:
                 peer=await self.client.resolve_peer('tonstationgames_bot'),
                 bot=await self.client.resolve_peer('tonstationgames_bot'),
                 platform='android',
-                from_bot_menu=False,
+                from_bot_menu=True,
                 url='https://tonstation.app/app/',
                 start_param="ref_xavygoyfrvstgwv7gptymu"
             )

@@ -1,10 +1,10 @@
 # api id, hash
-API_ID = 1488
-API_HASH = '1488ugiukl'
+API_ID=20745400
+API_HASH="565fd03cdac90f75bff96707f68bd87d"
 
 DELAYS = {
     'ACCOUNT': [5, 6],  # delay between connections to accounts (the more accounts, the longer the delay)
-    'PLAY': [5, 6],   # delay between play in seconds
+    'PLAY': [5, 5],   # delay between play in seconds
     'ERROR_PLAY': [60, 180],    # delay between errors in the game in seconds
 }
 # Use proxies or not
