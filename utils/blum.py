@@ -1,13 +1,14 @@
 import random
 from utils.core import logger
 from pyrogram import Client
-from pyrogram.raw.functions.messages import RequestWebView
+from pyrogram.raw.functions.messages import RequestWebView,RequestAppWebView
 import asyncio
 from urllib.parse import unquote
 from data import config
 import urllib.parse
 import json
 import jwt
+from pyrogram.raw.types import InputBotAppShortName
 class BlumBot:
     def __init__(self, thread, account, session, proxy):
         """
@@ -161,13 +162,12 @@ class BlumBot:
                 peer=await self.client.resolve_peer('tonstationgames_bot'),
                 bot=await self.client.resolve_peer('tonstationgames_bot'),
                 platform='android',
-                from_bot_menu=True,
-                url='https://tonstation.app/app/',
-                start_param="ref_xavygoyfrvstgwv7gptymu"
+                from_bot_menu=False,
+                url='https://tonstation.app/app/'
             )
         )
-
         auth_url = web_view.url
         logger.info(auth_url)
         await self.client.disconnect()
         return unquote(string=unquote(string=auth_url.split('tgWebAppData=')[1].split('&tgWebAppVersion')[0]))
+#https://tonstation.app/app/#tgWebAppData=query_id%3DAAHRUvoKAwAAANFS-grYNDJ_%26user%3D%257B%2522id%2522%253A6626628305%252C%2522first_name%2522%253A%2522Gssg%2522%252C%2522last_name%2522%253A%2522777%2522%252C%2522username%2522%253A%2522goonsomeway%2522%252C%2522language_code%2522%253A%2522zh-hant%2522%252C%2522allows_write_to_pm%2522%253Atrue%257D%26auth_date%3D1721827219%26hash%3D6cf409d5a5e11989d75aa775763695a86667e79173f424df78e164d5d50d65a6&tgWebAppVersion=6.7&tgWebAppPlatform=android&tgWebAppSideMenuUnavail=1
